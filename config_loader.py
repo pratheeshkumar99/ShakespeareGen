@@ -24,6 +24,7 @@ def load_config(file_path='../config.json'):
     try:
         with open(file_path, 'r') as file:
             config = json.load(file)
+            
     except FileNotFoundError:
         print("Configuration file not found.", file=sys.stderr)
         sys.exit(1)

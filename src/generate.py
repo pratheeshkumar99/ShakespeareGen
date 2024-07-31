@@ -2,12 +2,16 @@ import torch
 from model import TextGeneratorModel
 import os
 import sys
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+from config_loader import load_config
+import argparse
 
 def load_model(model_path, config):
     """
     Loads the model from the specified path with the given configuration.
     """
-    model = TextGeneratorModel(config)
+
+    model = TextGeneratorModel(config["model"]).to(config["model"]["device"])
     try:
         model.load_state_dict(torch.load(model_path))
         model.eval()
@@ -42,11 +46,15 @@ def generate_text(model, itos, max_len=100):
         print(f"Caught an error during generation: {e}", file=sys.stderr)
 
 if __name__ == '__main__':
+    parser = argparse.ArgumentParser(description='Generate text using a trained model')
+    parser.add_argument('max_len', type=int, help='Maximum number of tokens to generate')
+    args = parser.parse_args()
+
     config = load_config()  # Ensure this function loads and sets the device correctly
-    model_path = os.path.join('..', 'model', 'model_weights.pth')  # Adjust the path as necessary
-    mapping_path = os.path.join('..', 'model', 'char_mappings.pth')
+    model_path = os.path.join('..', 'models', 'text_generator_model_latest.pth')  # Adjust the path as necessary
+    mapping_path = os.path.join('..', 'models', 'char_mappings.pth')
 
     model = load_model(model_path, config)
     _, itos = load_char_mappings(mapping_path)
     
-    generate_text(model, itos, max_len=100)
+    generate_text(model, itos, max_len=args.max_len)
