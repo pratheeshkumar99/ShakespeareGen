@@ -11,7 +11,7 @@ def get_device():
     else:
         return 'cpu'
 
-def load_config(file_path='config.json'):
+def load_config(file_path='../config.json'):
     """
     Loads configuration settings from a JSON file and sets the appropriate device.
 
