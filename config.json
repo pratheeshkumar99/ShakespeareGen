@@ -1,0 +1,14 @@
+{
+    "model": {
+        "vocab_size": 65, 
+        "n_embd": 64,     
+        "d_model": 64,     
+        "n_head": 8,       
+        "dropout": 0.1,    
+        "block_size": 25,  
+        "n_layer": 4,      
+        "device": "mps"  ,
+        "batch_size": 64,
+        "lr" : 0.0003 
+    }
+}
