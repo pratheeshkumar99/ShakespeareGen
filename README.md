@@ -73,7 +73,7 @@ ShakespeareGen uses a custom-built transformer model to predict and generate tex
 
 ### Visualization of the Model Architecture
 
-! [Model Architecture](images/TextGeneratorModel.png)
+![Model Architecture](images/TextGeneratorModel.png)
 The architecture of the model outlines the different layers and their connections within the transformer model.
 
 ### Training and Validation Loss
