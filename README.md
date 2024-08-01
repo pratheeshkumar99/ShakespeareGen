@@ -73,14 +73,22 @@ ShakespeareGen uses a custom-built transformer model to predict and generate tex
 
 ### Visualization of the Model Architecture
 
-The architecture of the model is visualized in the `MyPyTorchModel_torchviz.jpeg` file, which outlines the different layers and their connections within the transformer model.
+! [Model Architecture](images/TextGeneratorModel.png)
+The architecture of the model outlines the different layers and their connections within the transformer model.
 
 ### Training and Validation Loss
 
-The training process of the ShakespeareGen model was carried out over 10 epochs. Throughout this period, we observed significant reductions in both training and validation losses, as depicted in the provided graph.
+The training process of the ShakespeareGen model was carried out over 10 epochs. During which we observed a consistent decrease in the training loss, demonstrating the model’s ability to learn from the training data effectively. The validation loss also decreased but plateaued, suggesting the beginning of convergence but also highlighting a potential for further optimization with additional epochs or adjustments to the learning parameters.
+
+Below is a graph depicting the training and validation losses over the epochs:
+
+
+![Training and Validation Loss Graph](images/training_validation_loss_plot.png)
+
+This graph shows the training loss (blue line) and validation loss (orange line) across the 10 epochs. The decreasing trend in training loss indicates effective learning, while the validation loss plateau suggests potential areas for further optimization. Due to resource constraints, training was limited to 10 epochs; however, the results are promising and indicate that with further training, the model could potentially achieve better generalization.
 
 ```
-   •	Epoch 1: Train Loss = 1.8826, Validation Loss = 1.7519
+    •	Epoch 1: Train Loss = 1.8826, Validation Loss = 1.7519
 	•	Epoch 2: Train Loss = 1.6313, Validation Loss = 1.6858
 	•	Epoch 3: Train Loss = 1.5802, Validation Loss = 1.6554
 	•	Epoch 4: Train Loss = 1.5547, Validation Loss = 1.6432
@@ -93,9 +101,6 @@ The training process of the ShakespeareGen model was carried out over 10 epochs.
    
 ```
 
-As the graph demonstrates, the training loss shows a consistent decrease, indicative of the model’s learning efficacy. The validation loss also trends downwards, which suggests that the model is generalizing well to new data, though it begins to plateau toward the latter epochs. This plateauing can often suggest that the model is nearing its learning capacity under the current configuration and training duration.
-
-Due to resource constraints, the training was halted at 10 epochs. However, the results are promising, and with additional resources or further hyperparameter tuning, there’s potential for even greater model performance and generalization. Extending the number of training epochs, enhancing the model architecture, or employing techniques like learning rate scheduling could yield further improvements.
 
 ### Model Output Analysis
 
