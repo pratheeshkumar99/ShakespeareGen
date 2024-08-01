@@ -224,13 +224,6 @@ Son he in, we are line hea
 The stark difference between the pre-training and post-training outputs illustrates the model’s capability to capture and generate language patterns effectively. The initial random output evolves into a structured and stylistically appropriate text, showcasing the power of neural networks in learning from data.
 
 
-Training Observations
-
-The model’s training was limited to 10 epochs due to resource constraints. Despite this limitation, the training results were promising, showing a consistent decrease in training and validation losses. Further training could potentially enhance the model’s performance, allowing for even more sophisticated language generation. This hypothesis is supported by the gradual decrease in loss and the validation loss’s plateau, suggesting that additional training epochs could yield further improvements.
-
-For a visual representation of the training progress, refer to the attached loss graph which illustrates the changes in training and validation losses across the epochs:
-
-
 ### Contributing
 
 Contributions to ShakespeareGen are welcome. Please fork the repository and submit pull requests with your suggested changes.
